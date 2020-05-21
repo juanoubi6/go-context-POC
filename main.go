@@ -27,9 +27,9 @@ func main() {
 	// Create 4 new contexts:
 	// Cancel context: can be cancelled from outside with the cancel() function
 	// Timeout context: after a certain amount of time, the context is cancelled automatically. We are going to create
-	//                   an additional timeOut context that inherits from a cancel context.
+	//                  an additional timeOut context that inherits from a cancel context.
 	// Deadline context: when the clock reaches a certain time, the context is cancelled automatically. Useful
-	//					 to propagate timeout across APIs.
+	//                   to propagate timeout across APIs.
 	cancelCtx, cancel := context.WithCancel(ctx)
 	timeoutCtx, _ := context.WithTimeout(ctx, time.Second*5)
 	cancelCtxSonCtx, _ := context.WithTimeout(cancelCtx, time.Second*10)
