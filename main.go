@@ -40,7 +40,7 @@ func main() {
 	go worker(timeoutCtx, "Closing timeoutCtx gorutine")
 	go worker(deadlineCtx, "Closing deadlineCtx gorutine")
 
-	// Cancel the cancelCtx goroutine and any context that inherits it's values
+	// Cancel the cancelCtx goroutine and any context that inherits from it
 	time.Sleep(time.Second * 2)
 	cancel()
 
